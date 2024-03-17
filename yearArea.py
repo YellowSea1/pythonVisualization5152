@@ -8,36 +8,36 @@ def yearArea():
     # res = readMonthProfitCsv()
     bar = (
         Bar(init_opts=opts.InitOpts(width="1300px", height="450px", theme=ThemeType.MACARONS), )
-            .add_xaxis(['2018', '2019', '2020', '2021'])
+            .add_xaxis(['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.'])
             .add_yaxis(
-            "Central销售量",
-            [1696, 1813, 2332, 2813],
+            "美国各月份感染人数",
+            [0.845, 1.380, 4.643, 4.643,6.255,6.421,6.632 ],
             yaxis_index=2,
             # color="#f4cccc",
             label_opts=opts.LabelOpts(is_show=False),
         )
-            .add_yaxis(
-            "East销售量",
-            [1976, 2344, 2782, 3359],
-            yaxis_index=2,
-            # color="#e07070",
-            label_opts=opts.LabelOpts(is_show=False),
-        )
-            .add_yaxis(
-            "South销售量",
-            [1302, 1338, 1607, 1879],
-            yaxis_index=2,
-            # color="#ea9e9e",
-            label_opts=opts.LabelOpts(is_show=False),
-        )
-
-            .add_yaxis(
-            "West销售量",
-            [2517, 2425, 3004, 4186],
-            yaxis_index=2,
-            # color="#ea9e9e",
-            label_opts=opts.LabelOpts(is_show=False),
-        )
+        #     .add_yaxis(
+        #     "East销售量",
+        #     [1976, 2344, 2782, 3359],
+        #     yaxis_index=2,
+        #     # color="#e07070",
+        #     label_opts=opts.LabelOpts(is_show=False),
+        # )
+        #     .add_yaxis(
+        #     "South销售量",
+        #     [1302, 1338, 1607, 1879],
+        #     yaxis_index=2,
+        #     # color="#ea9e9e",
+        #     label_opts=opts.LabelOpts(is_show=False),
+        # )
+        #
+        #     .add_yaxis(
+        #     "West销售量",
+        #     [2517, 2425, 3004, 4186],
+        #     yaxis_index=2,
+        #     # color="#ea9e9e",
+        #     label_opts=opts.LabelOpts(is_show=False),
+        # )
 
             .extend_axis(
             yaxis=opts.AxisOpts(
@@ -57,7 +57,7 @@ def yearArea():
                 type_="value",
                 name="销售量（笔）",
                 min_=0,
-                max_=10000,
+                max_=7,
                 position="left",
                 axisline_opts=opts.AxisLineOpts(
                     # linestyle_opts=opts.LineStyleOpts(color="#675bba")

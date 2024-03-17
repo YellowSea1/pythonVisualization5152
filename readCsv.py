@@ -1,4 +1,6 @@
 import csv
+import pandas as pd
+import numpy as np
 
 
 def readMonthProfitCsv():
@@ -82,6 +84,54 @@ def readStateDistCsv():
             stateDist_sell.append(row[3])
     return stateDist_state, stateDist_order, stateDist_sell
 
+def readUS():
+    with open('美国疫情数据.csv', encoding='utf-8-sig') as csvfile:
+        reader = csv.reader(csvfile)
+        us_month=[]
+        us_confirm=[]
+        us_death=[]
+        us_recovered=[]
+        for row in reader:
+            us_month.append(row[0])
+            us_confirm.append(row[1])
+            us_death.append(row[2])
+            us_recovered.append(row[3])
+    return us_month,us_confirm,us_death,us_recovered
+
+def readCompareCountNumber():
+    df_num=pd.read_csv('中美疫情数据对比.csv', header=0)
+    df_num=np.array(df_num)
+    ChinaConfirmNumber=[]
+    USConfirmNumber=[]
+    Date=[]
+    ChinaGrowth=[1]
+    AmericanGrowth=[1]
+    for row in df_num:
+        Date.append(row[0])
+        ChinaConfirmNumber.append(row[1])
+        USConfirmNumber.append(row[2])
+    i=0
+    while(i<6):
+        ChinaGrowth.append(int(ChinaConfirmNumber[i+1])/int(ChinaConfirmNumber[i]))
+        AmericanGrowth.append(int(USConfirmNumber[i+1])/int(USConfirmNumber[i]))
+        i=i+1
+    print(ChinaGrowth)
+    print(AmericanGrowth)
+    return Date,ChinaConfirmNumber,USConfirmNumber,ChinaGrowth,AmericanGrowth
+
+def readCH():
+    with open('中国疫情数据.csv', encoding='utf-8-sig') as csvfile:
+        reader = csv.reader(csvfile)
+        ch_month=[]
+        ch_confirm=[]
+        ch_death=[]
+        ch_recovered=[]
+        for row in reader:
+            ch_month.append(row[0])
+            ch_confirm.append(row[1])
+            ch_death.append(row[2])
+            ch_recovered.append(row[3])
+    return ch_month,ch_confirm,ch_death,ch_recovered
 # def readCusPurchase():
 #     with open('州分布统计.csv', encoding='utf-8-sig') as csvfile:
 #         reader = csv.reader(csvfile)

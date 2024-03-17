@@ -21,6 +21,8 @@ from yearArea import yearArea
 from yearProductCategory import yearProductCategory
 from yearTransport import yearTransport
 from stateDist import stateDist
+from US import US
+from CH import CH
 
 
 # 将每个图 封装到 函数
@@ -57,6 +59,8 @@ def page_simple_layout():
         # line_markpoint(),
         # table_base(),
         # overlap_1,
+        US(),
+        CH(),
         monthProfit(),
         totalProductCategory(),
         totalTransport(),
