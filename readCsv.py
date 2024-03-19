@@ -84,6 +84,7 @@ def readStateDistCsv():
             stateDist_sell.append(row[2])
     return stateDist_state, stateDist_order, stateDist_sell
 
+
 def readUS():
     with open('美国疫情数据.csv', encoding='utf-8-sig') as csvfile:
         reader = csv.reader(csvfile)

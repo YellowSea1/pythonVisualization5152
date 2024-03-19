@@ -22,6 +22,8 @@ def stateDist():
     )
     return c
 
+
+
 def stateEnd():
     res = readStateDistCsv()
     state = res[0]
