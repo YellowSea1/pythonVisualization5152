@@ -73,15 +73,15 @@ def readYearTransportCsv():
 
 
 def readStateDistCsv():
-    with open('州分布统计.csv', encoding='utf-8-sig') as csvfile:
+    with open('china_start_end.csv',encoding='GBK') as csvfile:
         reader = csv.reader(csvfile)
         stateDist_state = []
         stateDist_order = []
         stateDist_sell = []
         for row in reader:
             stateDist_state.append(row[0])
-            stateDist_order.append(row[2])
-            stateDist_sell.append(row[3])
+            stateDist_order.append(row[1])
+            stateDist_sell.append(row[2])
     return stateDist_state, stateDist_order, stateDist_sell
 
 def readUS():

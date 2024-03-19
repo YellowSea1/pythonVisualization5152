@@ -13,10 +13,24 @@ def stateDist():
     sell = res[2]
     c = (
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
-            .add("订单量", [list(z) for z in zip(state, order)], "美国")
-            .add("销售量", [list(z) for z in zip(state, sell)], "美国")
+            .add("初始", [list(z) for z in zip(state, order)])
+            # .add("末尾", [list(z) for z in zip(state, sell)])
             .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
-            .set_global_opts(title_opts=opts.TitleOpts(title="州分布统计（订单量与销售量）"),
+            .set_global_opts(title_opts=opts.TitleOpts(title="各省分布统计（订单量与销售量）"),
+                             visualmap_opts=opts.VisualMapOpts(max_=10000),
+                             )
+    )
+    return c
+
+def stateEnd():
+    res = readStateDistCsv()
+    state = res[0]
+    sell = res[2]
+    c = (
+        Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
+            .add("末尾", [list(z) for z in zip(state, sell)])
+            .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
+            .set_global_opts(title_opts=opts.TitleOpts(title="各省分布统计（订单量与销售量）"),
                              visualmap_opts=opts.VisualMapOpts(max_=10000),
                              )
     )

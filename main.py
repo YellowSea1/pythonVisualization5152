@@ -21,6 +21,7 @@ from yearArea import yearArea
 from yearProductCategory import yearProductCategory
 from yearTransport import yearTransport
 from stateDist import stateDist
+from stateDist import stateEnd
 from US import US
 from CH import CH
 
@@ -67,6 +68,7 @@ def page_simple_layout():
         yearProductCategory(),
         yearTransport(),
         stateDist(),
+        stateEnd(),
         yearMktS(),
         yearArea(),
         totalArea(),

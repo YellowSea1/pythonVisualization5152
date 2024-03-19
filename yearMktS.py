@@ -1,3 +1,4 @@
+import numpy as np
 from pyecharts import options as opts
 from pyecharts.charts import Bar, Line
 from pyecharts.globals import ThemeType
@@ -7,19 +8,29 @@ from readCsv import readCompareCountNumber
 def yearMktS():
     res = readCompareCountNumber()
     custom_interval=[0, 100, 500, 1000000, 3000000, 20000000, 50000000, 99900000]
-    date,china,us,chinaGrow,usGrow=res[0],res[1],res[2],res[3],res[4]
+    date=res[0]
+    china=np.log(res[1]).tolist()
+    us=np.log(res[2]).tolist()
+    chinaGrow=np.log(res[3]).tolist()
+    usGrow=np.log(res[4]).tolist()
+    print("aaa")
+    print(res[1])
+    print("bbb")
+    print(np.log(res[1]))
+
+
     bar = (
         Bar(init_opts=opts.InitOpts(width="1300px", height="450px", theme=ThemeType.MACARONS), )
             .add_xaxis(date)
             .add_yaxis(
-            "China确诊人数",
+            "China确诊人数e^y",
             china,
             yaxis_index=2,
             # color="#f4cccc",
             label_opts=opts.LabelOpts(is_show=False),
         )
             .add_yaxis(
-            "US确诊人数",
+            "US确诊人数e^y",
             us,
             yaxis_index=2,
             # color="#e07070",
@@ -43,10 +54,10 @@ def yearMktS():
             yaxis=opts.AxisOpts(
                 type_="value",
                 name="确诊人数",
-                min_=0,
-                max_=99999999,
+                #min_=0,
+                # max_=99999999,
                 position="left",
-                interval=custom_interval,
+                #interval=custom_interval,
                 axisline_opts=opts.AxisLineOpts(
                     # linestyle_opts=opts.LineStyleOpts(color="#675bba")
                 ),
@@ -55,7 +66,7 @@ def yearMktS():
             .set_global_opts(
             # yaxis_opts=opts.AxisOpts(
             #     name="平均利润（元）",
-            #     min_=0,
+            #min_=0,
             #     max_=11,
             #     position="right",
             #     # offset=65,
@@ -79,7 +90,7 @@ def yearMktS():
             "China确诊增长率",
             chinaGrow,
             #[3,4,5,7.91, 7.57, 7.36, 7.35],
-            yaxis_index=0,
+            yaxis_index=1,
             z=2,
             is_smooth=True,
             color="#0093f3",
@@ -87,7 +98,7 @@ def yearMktS():
             .add_yaxis(
             "America确诊增长率",
             usGrow,
-            yaxis_index=0,
+            yaxis_index=1,
             z=2,
             is_smooth=True,
             color="#d14a61",
