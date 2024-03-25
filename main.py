@@ -20,8 +20,11 @@ from yearMktS import yearMktS
 from yearArea import yearArea
 from yearProductCategory import yearProductCategory
 from yearTransport import yearTransport
-from stateDist import stateDist
 from stateDist import stateEnd
+from stateDist import stateDistStart
+from stateDist import stateDistStartUS
+from stateDist import stateDistEndUS
+
 from US import US
 from CH import CH
 
@@ -61,18 +64,20 @@ def page_simple_layout():
         # overlap_1,
         US(),
         CH(),
-        monthProfit(),
-        totalProductCategory(),
-        totalTransport(),
-        yearProductCategory(),
-        yearTransport(),
-        stateDist(),
+        # monthProfit(),
+        # totalProductCategory(),
+        # totalTransport(),
+        # yearProductCategory(),
+        # yearTransport(),
+        stateDistStart(),
         stateEnd(),
+        stateDistStartUS(),
+        stateDistEndUS(),
         yearMktS(),
-        yearArea(),
-        totalArea(),
-        totalMktS(),
-        cusPurchase(),
+        # yearArea(),
+        # totalArea(),
+        # totalMktS(),
+        # cusPurchase(),
     )
     page.render("visualization.html")
 

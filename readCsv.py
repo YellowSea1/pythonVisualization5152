@@ -99,6 +99,19 @@ def readUS():
             us_recovered.append(row[3])
     return us_month,us_confirm,us_death,us_recovered
 
+def readStateDistCsvUS():
+    with open('us_start_end.csv',encoding='utf-8-sig') as csvfile:
+        reader = csv.reader(csvfile)
+        stateDist_state = []
+        stateDist_order = []
+        stateDist_sell = []
+        for row in reader:
+            stateDist_state.append(row[0])
+            stateDist_order.append(row[1])
+            stateDist_sell.append(row[2])
+    return stateDist_state, stateDist_order, stateDist_sell
+
+
 def readCompareCountNumber():
     df_num=pd.read_csv('中美疫情数据对比.csv', header=0)
     df_num=np.array(df_num)
