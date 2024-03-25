@@ -10,7 +10,7 @@ def US():
         Bar(init_opts=opts.InitOpts(width="1300px", height="450px"), )
             .add_xaxis(res[0])
             .add_yaxis(
-            "确诊(对数频数)",
+            "Confirmation",
             res[1],
             yaxis_index=2,
             color="#f4cccc",
@@ -19,7 +19,7 @@ def US():
 
             .extend_axis(
             yaxis=opts.AxisOpts(
-                name="死亡(对数频数)",
+                name="log\nfrequency",
                 type_="value",
                 min_=0,
                 max_=7,
@@ -32,7 +32,7 @@ def US():
             .extend_axis(
             yaxis=opts.AxisOpts(
                 type_="value",
-                name="对数频数",
+                name="log\nfrequency",
                 min_=0,
                 max_=7,
                 position="left",
@@ -43,7 +43,7 @@ def US():
         )
             .set_global_opts(
             yaxis_opts=opts.AxisOpts(
-                name="治愈(对数频数)",
+                name="log\nfrequency",
                 min_=0,
                 max_=7,
                 position="right",
@@ -55,7 +55,7 @@ def US():
             ),
             datazoom_opts=opts.DataZoomOpts(is_show=True, ),
 
-            title_opts=opts.TitleOpts(title="美国疫情数据", subtitle="2020年"),
+            title_opts=opts.TitleOpts(title="US Epidemic Trends", subtitle="2020年"),
             tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="cross"),
             legend_opts=opts.LegendOpts(pos_left="center"),
         )
@@ -65,7 +65,7 @@ def US():
         Line(init_opts=opts.InitOpts(width="1000px", height="400px"), )
             .add_xaxis(res[0])
             .add_yaxis(
-            "死亡(对数频数)",
+            "Death",
             res[2],
             yaxis_index=1,
             z=2,
@@ -73,7 +73,7 @@ def US():
             # color="#0093f3",
         )
             .add_yaxis(
-            "治愈(对数频数)",
+            "Cure",
             res[3],
             yaxis_index=0,
             z=2,

@@ -14,10 +14,10 @@ def stateDistStart():
     sell = res[2]
     c = (
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
-            .add("初始", [list(z) for z in zip(state, order)])
+            .add("start", [list(z) for z in zip(state, order)])
             # .add("末尾", [list(z) for z in zip(state, sell)])
             .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
-            .set_global_opts(title_opts=opts.TitleOpts(title="各省分布统计"),
+            .set_global_opts(title_opts=opts.TitleOpts(title="Province distribution statistics"),
                              visualmap_opts=opts.VisualMapOpts(max_=10000),
             )
     )
@@ -30,9 +30,9 @@ def stateEnd():
     sell = res[2]
     c = (
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
-            .add("末尾", [list(z) for z in zip(state, sell)])
+            .add("end", [list(z) for z in zip(state, sell)])
             .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
-            .set_global_opts(title_opts=opts.TitleOpts(title="各省分布统计"),
+            .set_global_opts(title_opts=opts.TitleOpts(title="Province distribution statistics"),
                              visualmap_opts=opts.VisualMapOpts(max_=10000),
                              )
     )
@@ -48,7 +48,7 @@ def stateDistStartUS():
         .add("start", [list(z) for z in zip(state, start)], "美国")
         # .add("末尾", [list(z) for z in zip(state, end)], "美国")
         .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
-        .set_global_opts(title_opts=opts.TitleOpts(title="州分布统计"),
+        .set_global_opts(title_opts=opts.TitleOpts(title="State distribution statistics"),
                          visualmap_opts=opts.VisualMapOpts(max_=10000),
                          )
     )
@@ -63,7 +63,7 @@ def stateDistEndUS():
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
         .add("end", [list(z) for z in zip(state, end)], "美国")
         .set_series_opts(label_opts=opts.LabelOpts(is_show=True))
-        .set_global_opts(title_opts=opts.TitleOpts(title="州分布统计"),
+        .set_global_opts(title_opts=opts.TitleOpts(title="State distribution statistics"),
                          visualmap_opts=opts.VisualMapOpts(max_=10000),
                          )
     )
