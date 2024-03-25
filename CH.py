@@ -14,7 +14,7 @@ def CH():
             "Confirmation",
             res[1],
             yaxis_index=2,
-            color="#f4cccc",
+            color="#7077A1",
             label_opts=opts.LabelOpts(is_show=False),
         )
 
@@ -26,7 +26,7 @@ def CH():
                 max_=6,
                 position="right",
                 axisline_opts=opts.AxisLineOpts(
-                    linestyle_opts=opts.LineStyleOpts(color="#d14a61")
+                    linestyle_opts=opts.LineStyleOpts(color="#F6B17A")
                 ),
             )
         )
@@ -38,7 +38,7 @@ def CH():
                 max_=6,
                 position="left",
                 axisline_opts=opts.AxisLineOpts(
-                    linestyle_opts=opts.LineStyleOpts(color="#675bba")
+                    linestyle_opts=opts.LineStyleOpts(color="#7077A1")
                 ),
             )
         )
@@ -50,7 +50,7 @@ def CH():
                 position="right",
                 offset=65,
                 axisline_opts=opts.AxisLineOpts(
-                    linestyle_opts=opts.LineStyleOpts(color="#5793f3")
+                    linestyle_opts=opts.LineStyleOpts(color="#2D3250")
                 ),
                 # axislabel_opts=opts.LabelOpts(formatter="{value}笔"),
             ),
@@ -71,7 +71,7 @@ def CH():
             yaxis_index=1,
             z=2,
             is_smooth=True,
-            # color="#0093f3",
+            color="#2D3250",
         )
             .add_yaxis(
             "Cure",
@@ -79,7 +79,7 @@ def CH():
             yaxis_index=0,
             z=2,
             is_smooth=True,
-            color="#d14a61",
+            color="#F6B17A",
         )
     )
     overlap_1 = bar.overlap(line)

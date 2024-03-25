@@ -42,7 +42,7 @@ def stateDistStartUS():
     res = readStateDistCsvUS()
     state = res[0]
     start = res[1]
-    end=res[2]
+    end = res[2]
     c = (
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
         .add("start", [list(z) for z in zip(state, start)], "美国")
@@ -58,7 +58,7 @@ def stateDistEndUS():
     res = readStateDistCsvUS()
     state = res[0]
     start = res[1]
-    end=res[2]
+    end = res[2]
     c = (
         Map(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))
         .add("end", [list(z) for z in zip(state, end)], "美国")

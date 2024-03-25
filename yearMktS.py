@@ -26,14 +26,14 @@ def yearMktS():
             "China确诊人数e^y",
             china,
             yaxis_index=2,
-            # color="#f4cccc",
+            color="#424769",
             label_opts=opts.LabelOpts(is_show=False),
         )
             .add_yaxis(
             "US确诊人数e^y",
             us,
             yaxis_index=2,
-            # color="#e07070",
+            color="#424769",
             label_opts=opts.LabelOpts(is_show=False),
         )
 
@@ -46,7 +46,7 @@ def yearMktS():
                 # max_=7000,
                 position="right",
                 axisline_opts=opts.AxisLineOpts(
-                    linestyle_opts=opts.LineStyleOpts(color="#d14a61")
+                    linestyle_opts=opts.LineStyleOpts(color="#F6B17A")
                 ),
             )
         )
