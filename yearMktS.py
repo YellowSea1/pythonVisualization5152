@@ -10,9 +10,13 @@ def yearMktS():
     custom_interval=[0, 100, 500, 1000000, 3000000, 20000000, 50000000, 99900000]
     date=res[0]
     china=np.log(res[1]).tolist()
+    china= [round(i, 3) for i in china]
     us=np.log(res[2]).tolist()
+    us= [round(i, 3) for i in us]
     chinaGrow=np.log(res[3]).tolist()
+    chinaGrow = [round(i, 3) for i in chinaGrow]
     usGrow=np.log(res[4]).tolist()
+    usGrow = [round(i, 3) for i in usGrow]
     print("aaa")
     print(res[1])
     print("bbb")
@@ -26,8 +30,8 @@ def yearMktS():
             "China确诊人数e^y",
             china,
             yaxis_index=2,
-            # color="#f4cccc",
             label_opts=opts.LabelOpts(is_show=False),
+            color='#2D3250'
         )
             .add_yaxis(
             "US确诊人数e^y",
@@ -35,7 +39,9 @@ def yearMktS():
             yaxis_index=2,
             # color="#e07070",
             label_opts=opts.LabelOpts(is_show=False),
+            color='#2D3250'
         )
+
 
             .extend_axis(
             yaxis=opts.AxisOpts(

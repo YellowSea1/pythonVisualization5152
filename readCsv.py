@@ -113,11 +113,11 @@ def readCompareCountNumber():
         USConfirmNumber.append(row[2])
     i=0
     while(i<6):
-        ChinaGrowth.append(int(ChinaConfirmNumber[i+1])/int(ChinaConfirmNumber[i]))
-        AmericanGrowth.append(int(USConfirmNumber[i+1])/int(USConfirmNumber[i]))
+        #print('while loop')
+        #print(round(int(ChinaConfirmNumber[i+1])/int(ChinaConfirmNumber[i]),3))
+        ChinaGrowth.append(round(int(ChinaConfirmNumber[i+1])/int(ChinaConfirmNumber[i]),3))
+        AmericanGrowth.append(round(int(USConfirmNumber[i+1])/int(USConfirmNumber[i]),3))
         i=i+1
-    print(ChinaGrowth)
-    print(AmericanGrowth)
     return Date,ChinaConfirmNumber,USConfirmNumber,ChinaGrowth,AmericanGrowth
 
 def readCH():
